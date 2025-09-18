@@ -1,5 +1,28 @@
-# wordSeg
-主函数为newWordsFind.py
+## wordSeg
 
-# 整体思路：
-基于PMI和左右信息熵实现中文分词算法，对每天的新闻语料进行分词，不用任何其他的已经存在的分词词库，将满足条件的词语提取出来与已经存在的词库中的词作比较，若是词库中没有，则添加进去。此处将未登录词和新词认为是一样的，没有细分。
+A lightweight Chinese word segmentation algorithm based on PMI (Pointwise Mutual Information) and information entropy.
+
+Main Script
+
+newWordsFind.py
+
+## Overview
+
+This project implements a custom Chinese word segmentation algorithm without relying on any existing segmentation dictionaries.
+The approach analyzes daily news corpora and automatically identifies new words.
+
+## Key Features
+
+PMI + Left/Right Entropy: Utilized to evaluate word boundaries and cohesion.
+
+Dictionary-free: No pre-built segmentation lexicons are required.
+
+Incremental vocabulary building:
+
+Extracts candidate words from the corpus that meet statistical thresholds.
+
+Compares them against an existing dictionary.
+
+Adds unseen words to the dictionary automatically.
+
+Unified handling of “new words” and “out-of-vocabulary (OOV) words”: Both are treated the same (not differentiated).
